@@ -3,7 +3,10 @@
 
 
 ListGraph::ListGraph(int numNodes){
+
+	edgeList = std::vector<EList>();
 	edgeList.resize(numNodes); //274 class lecture
+	num_edges = 0;
 	
 
 }
@@ -12,7 +15,7 @@ ListGraph::~ListGraph(){
 	//deconstructor
 }
 
-//Look at ajduberstein HW05 code to learn how to use NWpairs and add them correctly to edgelist
+//used ajduberstein HW05 code to learn how to use NWpairs and add them correctly to edgelist
 void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 	
 	if(u < edgeList.size() && v < edgeList.size() && u!=v && weight>0){
@@ -34,7 +37,7 @@ EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
 	//got syntax for list from http://www.cplusplus.com/reference/list/list/begin/
 	for( it=uLst.begin(); it!=uLst.end(); it++){
 		if(v == it->first){
-			wght == it->second;
+			wght = it->second;
 		}
 	}
 
