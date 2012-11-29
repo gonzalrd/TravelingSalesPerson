@@ -54,7 +54,8 @@ unsigned ListGraph::degree(NodeID u) const{
 	return dg;
 }
 std::list<NWPair> ListGraph::getAdj(NodeID u) const{
+
 	return edgeList.at(u);
 };
-unsigned ListGraph::size() const{ return 0.0;}
-unsigned ListGraph::numEdges() const { return 0.0;}
+unsigned ListGraph::size() const{ return edgeList.size();}
+unsigned ListGraph::numEdges() const { return num_edges;}
