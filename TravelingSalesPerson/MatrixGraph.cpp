@@ -8,7 +8,10 @@
  MatrixGraph::~MatrixGraph(){};
 
   // Modifiers
- void MatrixGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){}
+ void MatrixGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
+ 
+ 
+ }
   
   // Inspectors
  EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const{return 0.0;}

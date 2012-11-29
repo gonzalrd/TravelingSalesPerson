@@ -4,6 +4,7 @@
 
 ListGraph::ListGraph(int numNodes){
 	edgeList.resize(numNodes); //274 class lecture
+	
 
 }
 
@@ -11,8 +12,17 @@ ListGraph::~ListGraph(){
 	//deconstructor
 }
 
+//Look at ajduberstein HW05 code to learn how to use NWpairs and add them correctly to edgelist
+void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
+	
+	if(u < edgeList.size() && v < edgeList.size() && u!=v && weight>0){
+		edgeList.at(u).push_back(NWPair(u, weight));
+		edgeList.at(v).push_back(NWPair(v,weight));
 
-void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){}
+		num_edges = num_edges + 1;
+	}
+
+}
 
 EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
 	return 0.0;
