@@ -26,8 +26,12 @@ void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 
 EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
 	
+	EdgeWeight wght = 0.0;
 
-	return 0.0;
+	EList uLst = edgeList.at(u);
+
+
+	return wght;
 }
 
 
