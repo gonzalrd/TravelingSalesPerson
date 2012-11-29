@@ -16,8 +16,8 @@ ListGraph::~ListGraph(){
 void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 	
 	if(u < edgeList.size() && v < edgeList.size() && u!=v && weight>0){
-		edgeList.at(u).push_back(NWPair(u, weight));
-		edgeList.at(v).push_back(NWPair(v,weight));
+		edgeList.at(u).push_back(NWPair(v,weight));
+		edgeList.at(v).push_back(NWPair(u,weight));
 
 		num_edges = num_edges + 1;
 	}
@@ -25,6 +25,8 @@ void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 }
 
 EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
+
+
 	return 0.0;
 }
 
