@@ -25,7 +25,7 @@ void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight){
 }
 
 EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
-
+	
 
 	return 0.0;
 }
