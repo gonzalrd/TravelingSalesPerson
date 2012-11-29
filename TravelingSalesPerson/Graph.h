@@ -53,7 +53,7 @@ class Graph {
    * Return a list of NodeID/EdgeWeight pairs describing the nodes adjacent to edge w.
    *
    * Preconditions: u is a legal label.
-   */
+    */
   virtual std::list<NWPair> getAdj(NodeID u) const = 0;
 
   /*
