@@ -42,7 +42,14 @@ EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
 }
 
 
-unsigned ListGraph::degree(NodeID u) const{ return 0.0;}
+unsigned ListGraph::degree(NodeID u) const{ 
+
+	unsigned dg = -1.0;
+	if(u < edgeList.size()){
+		dg = edgeList.at(u).size();
+	}
+	return dg;
+}
 std::list<NWPair> ListGraph::getAdj(NodeID u) const{
 	return edgeList.at(u);
 };
