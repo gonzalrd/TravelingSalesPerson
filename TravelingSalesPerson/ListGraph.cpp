@@ -30,6 +30,13 @@ EdgeWeight ListGraph::weight(NodeID u, NodeID v)const{
 
 	EList uLst = edgeList.at(u);
 
+	std::list<NWPair>::iterator it;
+	//got syntax for list from http://www.cplusplus.com/reference/list/list/begin/
+	for( it=uLst.begin(); it!=uLst.end(); it++){
+		if(v == it->first){
+			wght == it->second;
+		}
+	}
 
 	return wght;
 }
