@@ -58,4 +58,5 @@ std::list<NWPair> ListGraph::getAdj(NodeID u) const{
 	return edgeList.at(u);
 };
 unsigned ListGraph::size() const{ return edgeList.size();}
+
 unsigned ListGraph::numEdges() const { return num_edges;}
