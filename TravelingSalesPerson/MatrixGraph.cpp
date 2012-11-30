@@ -41,19 +41,28 @@
  unsigned MatrixGraph::degree(NodeID u) const{
 	 unsigned deg = 0.0;
 	 //add together all the places it finds weights in u
-	 for(int n = 0; n <= M.size(); n++){
+	 for(int n = 0; n < M.size(); n++){
 		 if(M[u][n] != 0){
 			 deg = deg +1.0;
 		 }
 	 }
-
+	 
 	 return deg;
  }
+
+ //should return all the neighnors of u
  std::list<NWPair> MatrixGraph::getAdj(NodeID u) const{
 
-	std::list<NWPair> n;
+	std::list<NWPair> ngbor = std::list<NWPair>();
 	 
-	 return n; //look at notes for how a matrix is formed with the num edges and notes
+	 for(int n = 0; n < M.size(); n++){
+		 if(M[u][n] != 0){
+			 ngbor.push_back(NWPair(n, M[u][n]));
+		 }
+	 }
+
+	 
+	 return ngbor; //look at notes for how a matrix is formed with the num edges and notes
 	  }
  unsigned MatrixGraph::size() const{return M.size();}
  unsigned MatrixGraph::numEdges() const{return num_edges;}
