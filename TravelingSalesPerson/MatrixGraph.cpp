@@ -5,6 +5,7 @@
  MatrixGraph::MatrixGraph(unsigned num_nodes){
 	 M = std::vector<std::vector<EdgeWeight> > ();
 	 M.resize(num_nodes);
+	 num_edges = 0;
 	 //TO DO:need to resize each node in M to be num_nodes
 	 
 	 for(int n = 0; n < M.size(); n++){
@@ -25,7 +26,7 @@
 		 M[u][v] = weight;
 		 M[v][u] = weight;
 
-
+		 num_edges++;
 	 }
  
  }
@@ -37,12 +38,22 @@
 	 return wght;
  }
  //virtual std::list<NWPair> getAdj(NodeID u) const;
- unsigned MatrixGraph::degree(NodeID u) const{return 0.0;}
+ unsigned MatrixGraph::degree(NodeID u) const{
+	 unsigned deg = 0.0;
+	 //add together all the places it finds weights in u
+	 for(int n = 0; n <= M.size(); n++){
+		 if(M[u][n] != 0){
+			 deg = deg +1.0;
+		 }
+	 }
+
+	 return deg;
+ }
  std::list<NWPair> MatrixGraph::getAdj(NodeID u) const{
 
 	std::list<NWPair> n;
 	 
 	 return n; //look at notes for how a matrix is formed with the num edges and notes
 	  }
- unsigned MatrixGraph::size() const{return 0.0;}
- unsigned MatrixGraph::numEdges() const{return 0.0;}
+ unsigned MatrixGraph::size() const{return M.size();}
+ unsigned MatrixGraph::numEdges() const{return num_edges;}
