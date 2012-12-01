@@ -35,14 +35,20 @@ return bestTour;
 				 cur = cur + G->weight(i , i+1);
 				 Ids.push_back(i);
 			}
-			else 
-			cur = cur + G->weight(i-1 , i);
-				 Ids.push_back(i);
+//			else {
+//			cur = cur + G->weight(i-1 , i);
+//				 Ids.push_back(i);
+	//		}
 			}
-		for(int j = 0; j < startPoint-1; j++){
+
+		cur = cur = cur + G->weight(G->size()-2, G->size()-1);
+		Ids.push_back(G->size()-1);
+		//TODO: debug with watch point on startpoint
+	for(int j = 0; j < startPoint; j++){
 			cur = cur + G->weight(j , j+1);
 			Ids.push_back(j);
 		}
+
 
 		 
 
@@ -53,10 +59,12 @@ return bestTour;
 
 		else if(best == 0){ 
 			best = cur;
+			curIds = Ids;
 			 best = BestTour(G, startPoint+1);
 		}
 
 		else{
+			//curIds=Ids;
 			 best = BestTour(G, startPoint+1);
 			}
 
