@@ -36,7 +36,7 @@ return bestTour;
 			}
 			else {
 				//adds the last one the TSP
-				cur = cur + G->weight(i , startPoint);
+				cur = cur + G->weight(i , 0);
 				 Ids.push_back(i);
 			}
 			}
