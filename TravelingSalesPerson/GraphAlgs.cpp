@@ -33,6 +33,9 @@ return bestTour;
 			if(i != G->size()-1){//check for last one so you dont go out of bounds
 				 cur = cur + G->weight(i , i+1);
 				 Ids.push_back(i);
+				 if( cur > bestSoFar && bestSoFar !=0){// branch and bound
+					 return BestTour(G, startPoint +1 , bestSoFar);
+				 }
 			}
 			else {
 				//adds the last one the TSP
@@ -44,6 +47,9 @@ return bestTour;
 		//add the ones before the startpoint to the end
 	for(int j = 0; j < startPoint; j++){
 			cur = cur + G->weight(j , j+1);
+				 if( cur > bestSoFar && bestSoFar !=0){// branch and bound
+					 return BestTour(G, startPoint +1 , bestSoFar);
+				 }
 			Ids.push_back(j);
 		}
 
