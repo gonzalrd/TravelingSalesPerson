@@ -21,6 +21,6 @@
  */
 
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G);
-EdgeWeight BestTour(Graph* G, int startPoint);//recursive method that solves problem in TSP
+EdgeWeight BestTour(Graph* G, int startPoint,EdgeWeight bestSoFar);//recursive method that solves problem in TSP
 
 
