@@ -4,8 +4,6 @@
 
 
 std::vector<NodeID> curIds;
-//EdgeWeight best;
-
 
 //solves the traveling salesperson problem defined it its .h file
 std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G){
@@ -19,6 +17,8 @@ std::pair<std::vector<NodeID>, EdgeWeight> bestTour = make_pair(curIds, bestFoun
  
 return bestTour;
 }
+
+//simular to the recursive method we talked about in class
  EdgeWeight BestTour(Graph* G, int startPoint, EdgeWeight bestSoFar){
 
 	EdgeWeight cur = 0.0;
@@ -58,20 +58,7 @@ return bestTour;
 			curIds = Ids;
 			bestSoFar = BestTour(G, startPoint+1, bestSoFar);
 		}
-//I would no longer need the following
-//		else if(best == 0){ 
-//			best = cur;
-//			curIds = Ids;
-//			 best = BestTour(G, startPoint+1);
-//		}
-//
-//		else{
-//			
-//			 best = BestTour(G, startPoint+1);
-//			}
-//
-//			return best;
-//		
+
 		return bestSoFar;
 
 		}

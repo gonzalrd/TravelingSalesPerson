@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
   pair<int,int> p = testSpeedTSP(SB, 60, true);
 
   
-  system("PAUSE");
+  
   
 
   return 0;
