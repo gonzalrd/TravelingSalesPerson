@@ -33,28 +33,34 @@ return bestTour;
 		for(int i = startPoint; i<G->size(); i++){
 			if(i != G->size()-1){//check for last one so you dont go out of bounds
 				 cur = cur + G->weight(i , i+1);
-				 curIds.push_back(i);
+				 Ids.push_back(i);
 			}
-			
+			else 
+			cur = cur + G->weight(i-1 , i);
+				 Ids.push_back(i);
 			}
-		for(int j = 0; j < startPoint; j++){
+		for(int j = 0; j < startPoint-1; j++){
 			cur = cur + G->weight(j , j+1);
-			curIds.push_back(j);
+			Ids.push_back(j);
 		}
 
-		 best = BestTour(G, startPoint+1);
+		 
 
-		if(best > cur && cur!=0){
+		if(best > cur && cur!=0 && best != 0){
 			best = cur;
 			curIds = Ids;
-			return best;
 		}
 
-		else if(best == 0.0){
+		else if(best == 0){ 
 			best = cur;
-			return BestTour(G, startPoint+1);
+			 best = BestTour(G, startPoint+1);
 		}
 
-		else return BestTour(G, startPoint+1);
+		else{
+			 best = BestTour(G, startPoint+1);
+			}
+
+			return best;
+		
 
 }
